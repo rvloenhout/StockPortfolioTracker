@@ -1,0 +1,151 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"stock_tracker company_info\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.138.1203.0 (24.11)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-GB",
+    "cultures": [
+      {
+        "name": "en-GB",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-NL",
+    "tables": [
+      {
+        "name": "stock_tracker company_info",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "longName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1d7c2a09-24a8-466c-9994-93633c745cfd",
+            "sourceColumn": "longName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "11348ee4-a0ae-4cdb-8b79-296677d4ebc0",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "industry",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "79ec2169-5bc5-4fd6-ac01-fe2a30ba313a",
+            "sourceColumn": "industry",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sector",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1d925cd2-4f9c-437b-bcfd-6b66ae3389a7",
+            "sourceColumn": "sector",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fullTimeEmployees",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "952dc40b-b7bf-4ed6-abbc-9503635b42ab",
+            "sourceColumn": "fullTimeEmployees",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "longBusinessSummary",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6a6e86f0-0683-4015-b613-ab89b8f47e38",
+            "sourceColumn": "longBusinessSummary",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "272b9f1f-60bd-4991-858d-c8c2e4d4aa25",
+        "partitions": [
+          {
+            "name": "stock_tracker company_info",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = MySQL.Database(\"localhost\", \"stock_tracker\", [ReturnSingleDatabase=true]),",
+                "    stock_tracker_company_info = Source{[Schema=\"stock_tracker\",Item=\"company_info\"]}[Data]",
+                "in",
+                "    stock_tracker_company_info"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Stock Tracker"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0dbff1ca-f3c9-4f2c-9438-e75aba56eb63"
+  }
+}

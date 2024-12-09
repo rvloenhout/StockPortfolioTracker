@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Stock Tracker"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7e56f8b8-245b-440f-9739-1873f001086f"
+  }
+}

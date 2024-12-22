@@ -13,10 +13,10 @@
             "x": 0,
             "y": 0
           },
-          "nodeIndex": "stock_tracker company_info",
-          "nodeLineageTag": "272b9f1f-60bd-4991-858d-c8c2e4d4aa25",
+          "nodeIndex": "stock_tracker price_history",
+          "nodeLineageTag": "ef091229-2d4b-431f-8a38-89158c92954c",
           "size": {
-            "height": 224,
+            "height": 272,
             "width": 234
           },
           "zIndex": 0

@@ -1,11 +1,19 @@
 {
-  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"AccessibleDefault\",\"version\":\"5.60\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
   "layoutOptimization": 0,
+  "publicCustomVisuals": [
+    "PBI_CV_886A053E_9DFD_4EA0_A47D_CCAEB89AF969"
+  ],
   "resourcePackages": [
     {
       "resourcePackage": {
         "disabled": false,
         "items": [
+          {
+            "name": "AccessibleDefault",
+            "path": "BuiltInThemes/AccessibleDefault.json",
+            "type": 201
+          },
           {
             "name": "CY24SU10",
             "path": "BaseThemes/CY24SU10.json",
@@ -20,23 +28,64 @@
   "sections": [
     {
       "config": "{}",
-      "displayName": "Page 1",
+      "displayName": "Portifolio Summary",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "5467125bcc7047926313",
+      "visualContainers": [],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Stock Overview",
       "displayOption": 1,
       "filters": "[]",
       "height": 720.00,
       "name": "56461c090ab901a019c0",
+      "ordinal": 1,
       "visualContainers": [
         {
-          "config": "{\"name\":\"b6874e8b3bc52dc1333a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.72644376899696,\"y\":0,\"z\":0,\"width\":861.7629179331308,\"height\":416.29179331306995,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"stock_tracker company_info.sector\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(stock_tracker company_info.longName)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"stock_tracker company_info\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"sector\"},\"Name\":\"stock_tracker company_info.sector\",\"NativeReferenceName\":\"sector\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"longName\"}},\"Function\":5},\"Name\":\"CountNonNull(stock_tracker company_info.longName)\",\"NativeReferenceName\":\"longName\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"longName\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
-          "filters": "[]",
-          "height": 416.29,
-          "width": 861.76,
-          "x": 9.73,
+          "config": "{\"name\":\"04c136590342b7bc00ab\",\"layouts\":[{\"id\":0,\"position\":{\"x\":517.4468085106383,\"y\":445.47112462006083,\"z\":1001,\"width\":762.5531914893618,\"height\":161.45896656534956,\"tabOrder\":1001}}],\"singleVisual\":{\"visualType\":\"ribbonChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(stock_tracker price_history.Volume)\"}],\"Category\":[{\"queryRef\":\"stock_tracker price_history.Datetime\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"stock_tracker price_history\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Volume\"}},\"Function\":0},\"Name\":\"Sum(stock_tracker price_history.Volume)\",\"NativeReferenceName\":\"Sum of Volume\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Datetime\"},\"Name\":\"stock_tracker price_history.Datetime\",\"NativeReferenceName\":\"Datetime\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Datetime\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"valueAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelOrientation\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"enableValueDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"stock_tracker price_history\"}},\"Property\":\"Datetime\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"stock_tracker price_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Between\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Datetime\"}},\"LowerBound\":{\"DateSpan\":{\"Expression\":{\"DateAdd\":{\"Expression\":{\"DateAdd\":{\"Expression\":{\"Now\":{}},\"Amount\":1,\"TimeUnit\":0}},\"Amount\":-7,\"TimeUnit\":0}},\"TimeUnit\":0}},\"UpperBound\":{\"DateSpan\":{\"Expression\":{\"Now\":{}},\"TimeUnit\":0}}}}}]},\"type\":\"RelativeDate\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 161.46,
+          "width": 762.55,
+          "x": 517.45,
+          "y": 445.47,
+          "z": 1001.00
+        },
+        {
+          "config": "{\"name\":\"76714cc411b276b97788\",\"layouts\":[{\"id\":0,\"position\":{\"x\":497.9939209726444,\"y\":0,\"z\":0,\"width\":782.0060790273557,\"height\":464.9240121580547,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"PBI_CV_886A053E_9DFD_4EA0_A47D_CCAEB89AF969\",\"projections\":{\"open\":[{\"queryRef\":\"Sum(stock_tracker price_history.Open)\"}],\"close\":[{\"queryRef\":\"Sum(stock_tracker price_history.Close)\"}],\"high\":[{\"queryRef\":\"Sum(stock_tracker price_history.High)\"}],\"low\":[{\"queryRef\":\"Sum(stock_tracker price_history.Low)\"}],\"Category\":[{\"queryRef\":\"stock_tracker price_history.Datetime\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"stock_tracker price_history\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Open\"}},\"Function\":0},\"Name\":\"Sum(stock_tracker price_history.Open)\",\"NativeReferenceName\":\"Sum of Open\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Close\"}},\"Function\":0},\"Name\":\"Sum(stock_tracker price_history.Close)\",\"NativeReferenceName\":\"Sum of Close\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"High\"}},\"Function\":0},\"Name\":\"Sum(stock_tracker price_history.High)\",\"NativeReferenceName\":\"Sum of High\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Low\"}},\"Function\":0},\"Name\":\"Sum(stock_tracker price_history.Low)\",\"NativeReferenceName\":\"Sum of Low\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Datetime\"},\"Name\":\"stock_tracker price_history.Datetime\",\"NativeReferenceName\":\"Datetime\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Datetime\"}}}]},\"columnProperties\":{\"Sum(stock_tracker price_history.Open)\":{\"displayName\":\"Open\"},\"Sum(stock_tracker price_history.Close)\":{\"displayName\":\"Close\"},\"Sum(stock_tracker price_history.High)\":{\"displayName\":\"High\"},\"Sum(stock_tracker price_history.Low)\":{\"displayName\":\"Low\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"colorBlind\":[{\"properties\":{\"vision\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}],\"xAxis\":[{\"properties\":{\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'categorical'\"}}},\"gridline\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"yAxis\":[{\"properties\":{\"unit\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"dataPoint\":[{\"properties\":{\"highLowCaps\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showShadowsColor\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"trendLines\":[{\"properties\":{\"interpolation\":{\"expr\":{\"Literal\":{\"Value\":\"'linear'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Stock Price per Hour (Last 7 Days)'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"stock_tracker price_history\"}},\"Property\":\"Datetime\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"stock_tracker price_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Between\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Datetime\"}},\"LowerBound\":{\"DateSpan\":{\"Expression\":{\"DateAdd\":{\"Expression\":{\"DateAdd\":{\"Expression\":{\"Now\":{}},\"Amount\":1,\"TimeUnit\":0}},\"Amount\":-7,\"TimeUnit\":0}},\"TimeUnit\":0}},\"UpperBound\":{\"DateSpan\":{\"Expression\":{\"Now\":{}},\"TimeUnit\":0}}}}}]},\"type\":\"RelativeDate\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 464.92,
+          "width": 782.01,
+          "x": 497.99,
           "y": 0.00,
           "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"8cf08ea2d0308d420450\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":136.17021276595744,\"height\":74.8936170212766,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"stock_tracker price_history.Symbol\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"stock_tracker price_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Symbol\"},\"Name\":\"stock_tracker price_history.Symbol\",\"NativeReferenceName\":\"Symbol\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"stock_tracker price_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Symbol\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'KPN.AS'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Stock'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 74.89,
+          "width": 136.17,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
         }
       ],
       "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "ETF Overview",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "b6c822613a2dced16508",
+      "ordinal": 2,
+      "visualContainers": [],
+      "width": 1280.00
     }
-  ]
+  ],
+  "theme": "AccessibleDefault"
 }

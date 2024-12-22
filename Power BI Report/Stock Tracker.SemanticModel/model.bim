@@ -4,15 +4,15 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"stock_tracker company_info\"]"
+        "value": "[\"stock_tracker price_history\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
-        "value": "1"
+        "value": "0"
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.138.1203.0 (24.11)"
+        "value": "2.138.1452.0 (24.11)"
       },
       {
         "name": "PBI_ProTooling",
@@ -40,8 +40,12 @@
     "sourceQueryCulture": "en-NL",
     "tables": [
       {
-        "name": "stock_tracker company_info",
+        "name": "stock_tracker price_history",
         "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
           {
             "name": "PBI_ResultType",
             "value": "Table"
@@ -49,7 +53,7 @@
         ],
         "columns": [
           {
-            "name": "longName",
+            "name": "ID",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -57,12 +61,12 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "1d7c2a09-24a8-466c-9994-93633c745cfd",
-            "sourceColumn": "longName",
+            "lineageTag": "60d07071-34f1-4e64-a133-08b089fd1a36",
+            "sourceColumn": "ID",
             "summarizeBy": "none"
           },
           {
-            "name": "country",
+            "name": "Symbol",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -70,38 +74,68 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "11348ee4-a0ae-4cdb-8b79-296677d4ebc0",
-            "sourceColumn": "country",
+            "lineageTag": "5ebb7a8e-cf49-4ba5-88d9-95df87ecf5e9",
+            "sourceColumn": "Symbol",
             "summarizeBy": "none"
           },
           {
-            "name": "industry",
+            "name": "Open",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
-            "lineageTag": "79ec2169-5bc5-4fd6-ac01-fe2a30ba313a",
-            "sourceColumn": "industry",
-            "summarizeBy": "none"
+            "dataType": "decimal",
+            "formatString": "\"€\"\\ #,0.00;-\"€\"\\ #,0.00;\"€\"\\ #,0.00",
+            "lineageTag": "c0cb333c-d570-4d14-b8c6-edf79e2a5602",
+            "sourceColumn": "Open",
+            "summarizeBy": "sum"
           },
           {
-            "name": "sector",
+            "name": "High",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
-            "lineageTag": "1d925cd2-4f9c-437b-bcfd-6b66ae3389a7",
-            "sourceColumn": "sector",
-            "summarizeBy": "none"
+            "dataType": "decimal",
+            "formatString": "\"€\"\\ #,0.00;-\"€\"\\ #,0.00;\"€\"\\ #,0.00",
+            "lineageTag": "1b711286-1acf-432f-9850-3a22b01f2bef",
+            "sourceColumn": "High",
+            "summarizeBy": "sum"
           },
           {
-            "name": "fullTimeEmployees",
+            "name": "Low",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\"€\"\\ #,0.00;-\"€\"\\ #,0.00;\"€\"\\ #,0.00",
+            "lineageTag": "f3a56363-bc9c-4cdb-84e9-c0ac36a71754",
+            "sourceColumn": "Low",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Close",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\"€\"\\ #,0.00;-\"€\"\\ #,0.00;\"€\"\\ #,0.00",
+            "lineageTag": "55e6467b-d681-4e37-916f-0de933537e9f",
+            "sourceColumn": "Close",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Volume",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -110,36 +144,38 @@
             ],
             "dataType": "int64",
             "formatString": "0",
-            "lineageTag": "952dc40b-b7bf-4ed6-abbc-9503635b42ab",
-            "sourceColumn": "fullTimeEmployees",
+            "lineageTag": "bdeab804-ba27-4d79-ba94-f022ca7bf609",
+            "sourceColumn": "Volume",
             "summarizeBy": "sum"
           },
           {
-            "name": "longBusinessSummary",
+            "name": "Datetime",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
-            "lineageTag": "6a6e86f0-0683-4015-b613-ab89b8f47e38",
-            "sourceColumn": "longBusinessSummary",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "8db7499a-a736-4ced-bd95-642b8ee191fa",
+            "sourceColumn": "Datetime",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "272b9f1f-60bd-4991-858d-c8c2e4d4aa25",
+        "lineageTag": "ef091229-2d4b-431f-8a38-89158c92954c",
         "partitions": [
           {
-            "name": "stock_tracker company_info",
+            "name": "stock_tracker price_history",
             "mode": "import",
             "source": {
               "expression": [
                 "let",
                 "    Source = MySQL.Database(\"localhost\", \"stock_tracker\", [ReturnSingleDatabase=true]),",
-                "    stock_tracker_company_info = Source{[Schema=\"stock_tracker\",Item=\"company_info\"]}[Data]",
+                "    stock_tracker_price_history = Source{[Schema=\"stock_tracker\",Item=\"price_history\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(stock_tracker_price_history,{{\"Open\", Currency.Type}, {\"High\", Currency.Type}, {\"Low\", Currency.Type}, {\"Close\", Currency.Type}})",
                 "in",
-                "    stock_tracker_company_info"
+                "    #\"Changed Type\""
               ],
               "type": "m"
             }
